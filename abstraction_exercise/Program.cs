@@ -2,10 +2,6 @@
 
 namespace abstraction_exercise
 {
-    //interface IAnimal
-    //{
-    //    void animalsound();
-    //}
 
     class Monkey
     {
@@ -40,17 +36,32 @@ namespace abstraction_exercise
         }
     }
 
+    //interface IAnimal
+    //{
+    //    void animalsound();
+    //}
+
     interface IAnimal
     {
         void animalSound(); // interface method
     }
 
+    interface IDonut
+    {
+        void eatDonut();
+    }
+
     // Implement multiple interfaces
-    class Safari : IAnimal
+    class Safari : IAnimal, IDonut
     {
         public void animalSound()
         {
             Console.WriteLine("Some text..");
+        }
+
+        public void eatDonut()
+        {
+            Console.WriteLine("MMMmm...Donuuuut");
         }
 
         //    class Safari : IAnimal
@@ -72,6 +83,7 @@ namespace abstraction_exercise
             badSafari.animalSound();
             coolMonkey.MonkeySound();
             thisWild.MonkeySound();
+            badSafari.eatDonut();
             coolMonkey.Name = "Chimpo";
             coolMonkey.Fur = true;
             Console.WriteLine(coolMonkey.Name);
